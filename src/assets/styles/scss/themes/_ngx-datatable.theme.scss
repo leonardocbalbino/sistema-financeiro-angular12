@@ -1,0 +1,27 @@
+@mixin ngx-datatable-theme($theme) {
+  $text-color: map-get(map-get(map-get($theme, color), foreground), text);
+  $disabled-text-color: map-get(map-get(map-get($theme, color), foreground), disabled-text);
+  .ngx-datatable.material {
+    background-color: transparent !important;
+    color: $text-color !important;
+  }
+  .ngx-datatable .datatable-header-cell, 
+  .ngx-datatable .datatable-body-cell,
+  .page-count,
+  .ngx-datatable .datatable-footer .datatable-pager a {
+    color: $text-color !important;
+  }
+  .ngx-datatable .datatable-footer .datatable-pager .pager li.disabled a {
+    color: $disabled-text-color !important;
+  }
+  .ngx-datatable.material .datatable-header {
+    background: map-get(map-get($theme, background), background);
+    // @debug map-get($theme, color);
+  }
+  .ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover,
+  .ngx-datatable.material:not(.cell-selection)
+    .datatable-body-row:hover
+    .datatable-row-group {
+    background: map-get(map-get($theme, background), hover);
+  }
+}

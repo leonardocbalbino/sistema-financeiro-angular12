@@ -1,0 +1,17 @@
+@mixin header-top($theme) {
+  $text-color: map-get(map-get(map-get($theme, color), foreground), text);
+  $background: map-get($theme, background);
+  $background-card: map-get($background, card);
+  $background-default: map-get($background, background);
+  // @debug map-get(map-get($theme, color), foreground);
+  
+  .header-topnav, .topnav ul ul {
+    background-color: $background-card;
+  }
+  .topnav ul li ul li:hover, .topnav ul li ul li.open {
+    background: $background-default;
+  }
+  .header-topnav a {
+    color: $text-color;
+  }
+}
