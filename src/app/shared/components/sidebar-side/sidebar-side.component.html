@@ -5,7 +5,7 @@
             <!-- App Logo -->
             <div class="branding">
                 <img src="assets/images/egret.png" alt="" class="app-logo">
-                <span class="app-logo-text">EGRET</span>
+                <span class="app-logo-text">Leonardo</span>
                 
                 <span style="margin: auto" *ngIf="layoutConf.sidebarStyle !== 'compact'"></span>
                 <div 
@@ -16,16 +16,16 @@
             </div>
         
             <!-- Sidebar user -->
-            <div class="app-user">
+            <!-- <div class="app-user">
                 <div class="app-user-photo">
                 <img src="assets/images/face-7.jpg" class="mat-elevation-z1" alt="">
                 </div>
                 <span class="app-user-name mb-8">
                 <mat-icon class="icon-xs text-muted">lock</mat-icon> 
                 {{jwtAuth?.user?.displayName}}
-                </span>
+                </span> -->
                 <!-- Small buttons -->
-                <div class="app-user-controls">
+                <!-- <div class="app-user-controls">
                 <button 
                 class="text-muted"
                 mat-icon-button 
@@ -52,23 +52,23 @@
                 <mat-menu #appUserMenu="matMenu">
                     <button mat-menu-item routerLink="/profile/overview">
                         <mat-icon>account_box</mat-icon>
-                        <span>Profile</span>
+                        <span>Perfil</span>
                     </button>
                     <button mat-menu-item routerLink="/profile/settings">
                         <mat-icon>settings</mat-icon>
-                        <span>Account Settings</span>
+                        <span>Configuração Conta</span>
                     </button>
                     <button mat-menu-item routerLink="/calendar">
                         <mat-icon>date_range</mat-icon>
-                        <span>Calendar</span>
+                        <span>Calendário</span>
                     </button>
                     <button mat-menu-item (click)="jwtAuth.signout()">
                         <mat-icon>exit_to_app</mat-icon>
-                        <span>Sign out</span>
+                        <span>Sair</span>
                     </button>
                     </mat-menu>
                 </div>
-            </div>
+            </div> -->
             <!-- Navigation -->
             <app-sidenav [items]="menuItems" [hasIconMenu]="hasIconTypeMenuItem" [iconMenuTitle]="iconTypeMenuTitle"></app-sidenav>
         </div>

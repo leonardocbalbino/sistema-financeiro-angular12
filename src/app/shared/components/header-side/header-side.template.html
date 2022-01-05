@@ -12,24 +12,24 @@
 
   <span fxFlex></span>
   <!-- Language Switcher -->
-  <button mat-button [matMenuTriggerFor]="menu">
+  <!-- <button mat-button [matMenuTriggerFor]="menu">
     <span class="flag-icon {{currentLang.flag}} mr-8"></span>
     <span>{{currentLang.name}}</span>
-  </button>
-<mat-menu #menu="matMenu">
+  </button> -->
+<!-- <mat-menu #menu="matMenu">
   <button mat-menu-item *ngFor="let lang of availableLangs" (click)="setLang(lang)">
         <span class="flag-icon mr-8 {{lang.flag}}"></span>
         <span>{{lang.name}}</span>
   </button>
-</mat-menu>
+</mat-menu> -->
 
 
-  <egret-search-input-over placeholder="Country (e.g. US)" resultPage="/search">
-  </egret-search-input-over>
+  <!-- <egret-search-input-over placeholder="Country (e.g. US)" resultPage="/search">
+  </egret-search-input-over> -->
   <!-- Open "views/search-view/result-page.component" to understand how to subscribe to input field value -->
 
   <!-- Notification toggle button -->
-  <button
+  <!-- <button
     mat-icon-button
     matTooltip="Notifications"
     (click)="toggleNotific()"
@@ -38,7 +38,7 @@
   >
     <mat-icon>notifications</mat-icon>
     <span class="notification-number mat-bg-warn">3</span>
-  </button>
+  </button> -->
   <!-- Top left user menu -->
   <button
     mat-icon-button
@@ -51,7 +51,7 @@
   <mat-menu #accountMenu="matMenu">
     <button mat-menu-item [routerLink]="['/profile/overview']">
       <mat-icon>account_box</mat-icon>
-      <span>Profile</span>
+      <span>Perfil</span>
     </button>
     <button mat-menu-item [routerLink]="['/profile/settings']">
       <mat-icon>settings</mat-icon>

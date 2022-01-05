@@ -6,14 +6,14 @@ import { AuthGuard } from './shared/guards/auth.guard';
 export const rootRouterConfig: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'conta',
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule),
-    data: { title: 'Choose A Demo' }
-  },
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule),
+  //   data: { title: 'Choose A Demo' }
+  // },
   {
     path: '',
     component: AuthLayoutComponent,
@@ -31,14 +31,15 @@ export const rootRouterConfig: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
+        path: 'conta',
+        loadChildren: () => import('./views/conta/conta.module').then(m => m.ContaModule),
+        data: { title: 'Conta', breadcrumb: 'CONTA'}
+      },
+
+      {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
         data: { title: 'Dashboard', breadcrumb: 'DASHBOARD'}
-      },
-      {
-        path: 'material',
-        loadChildren: () => import('./views/material-example-view/material-example-view.module').then(m => m.MaterialExampleViewModule),
-        data: { title: 'Material', breadcrumb: 'MATERIAL'}
       },
       {
         path: 'dialogs',
@@ -61,11 +62,6 @@ export const rootRouterConfig: Routes = [
         data: { title: 'Tables', breadcrumb: 'TABLES'}
       },
       {
-        path: 'tour',
-        loadChildren: () => import('./views/app-tour/app-tour.module').then(m => m.AppTourModule),
-        data: { title: 'Tour', breadcrumb: 'TOUR'}
-      },
-      {
         path: 'forms',
         loadChildren: () => import('./views/forms/forms.module').then(m => m.AppFormsModule),
         data: { title: 'Forms', breadcrumb: 'FORMS'}
@@ -81,24 +77,9 @@ export const rootRouterConfig: Routes = [
         data: { title: 'Charts', breadcrumb: 'CHARTS'}
       },
       {
-        path: 'map',
-        loadChildren: () => import('./views/map/map.module').then(m => m.AppMapModule),
-        data: { title: 'Map', breadcrumb: 'MAP'}
-      },
-      {
-        path: 'dragndrop',
-        loadChildren: () => import('./views/dragndrop/dragndrop.module').then(m => m.DragndropModule),
-        data: { title: 'Drag and Drop', breadcrumb: 'DND'}
-      },
-      {
         path: 'inbox',
         loadChildren: () => import('./views/app-inbox/app-inbox.module').then(m => m.AppInboxModule),
         data: { title: 'Inbox', breadcrumb: 'INBOX'}
-      },
-      {
-        path: 'calendar',
-        loadChildren: () => import('./views/app-calendar/app-calendar.module').then(m => m.AppCalendarModule),
-        data: { title: 'Calendar', breadcrumb: 'CALENDAR'}
       },
       {
         path: 'chat',
@@ -111,26 +92,8 @@ export const rootRouterConfig: Routes = [
         data: { title: 'CRUDs', breadcrumb: 'CRUDs'}
       },
       {
-        path: 'shop',
-        loadChildren: () => import('./views/shop/shop.module').then(m => m.ShopModule),
-        data: { title: 'Shop', breadcrumb: 'SHOP'}
-      },
-      {
         path: 'search',
         loadChildren: () => import('./views/search-view/search-view.module').then(m => m.SearchViewModule)
-      },
-      {
-        path: 'invoice',
-        loadChildren: () => import('./views/invoice/invoice.module').then(m => m.InvoiceModule)
-      },
-      {
-        path: 'todo',
-        loadChildren: () => import('./views/todo/todo.module').then(m => m.TodoModule)
-      },
-      {
-        path: 'orders',
-        loadChildren: () => import('./views/order/order.module').then(m => m.OrderModule),
-        data: { title: 'Orders', breadcrumb: 'Orders'}
       },
       {
         path: 'page-layouts',

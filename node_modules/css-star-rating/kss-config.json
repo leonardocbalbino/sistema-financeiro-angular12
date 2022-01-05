@@ -1,0 +1,12 @@
+{
+  "title" : "Css Star Rating",
+  "source": [
+    "src/kss-documentation"
+  ],
+  "destination":  "docs/",
+  "css": [
+    "assets/css/star-rating.css",
+    "assets/css/fontawesome-all.min.css"
+  ],
+  "js": []
+}
